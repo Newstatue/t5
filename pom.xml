@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>nz.ac.massey.cs.251</groupId>
-  <artifactId>t5</artifactId>
+  <artifactId>tutorial5</artifactId>
   <version>0.0.1</version>
 
   <dependencies>
@@ -17,28 +17,26 @@
       <scope>runtime</scope>
     </dependency>
   </dependencies>
+
   <build>
     <pluginManagement>
       <plugins>
-        <!--
-            If we e.g. execute on JDK 1.7, we should compile for Java 7 to get
-            the same (or higher) JAXB API version as used during the xjc execution.
-        -->
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
           <configuration>
-            <source>1.8</source>
-            <target>1.8</target>
+            <source>21</source>
+            <target>21</target>
           </configuration>
         </plugin>
       </plugins>
     </pluginManagement>
+
     <plugins>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>jaxb2-maven-plugin</artifactId>
-	<version>2.5.0</version>
+        <version>2.5.0</version>
         <executions>
           <execution>
             <id>xjc</id>
@@ -49,7 +47,7 @@
         </executions>
         <configuration>
           <!-- The package of your generated sources -->
-          <packageName>com.example.myschema</packageName>
+          <packageName>nz.ac.massey.cs.sdc.parsers</packageName>
           <outputDirectory>src/main/java</outputDirectory>
           <generateEpisode>false</generateEpisode>
           <clearOutputDir>false</clearOutputDir>
